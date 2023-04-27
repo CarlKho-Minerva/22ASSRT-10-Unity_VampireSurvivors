@@ -7,14 +7,14 @@ public class PlayerController : MonoBehaviour
     // public = shows as INPUT FIELD in Unity
     // private = hardcoded in the C# script
     // variables are camelCase
-    
+
     public float moveSpeed;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Hello World!");
     }
 
     // Update is called once per frame
@@ -27,10 +27,15 @@ public class PlayerController : MonoBehaviour
         // View types of input (Axes) = Edit --> Project Settings --> Input Manager --> Axes
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
-        
+
         // viewable in "Play >" --> Console
             // if autoscroll not working --> pause/play
-        /// Debug.Log(moveInput); 
+        
+        // visualize with graph (diagonal = longer than horizontal/vertical)
+        // makes it so that diagonal movement is not faster than horizontal/vertical movement
+        moveInput.Normalize(); 
+
+        Debug.Log(moveInput); 
 
         // transform is basically modifying axes value
         // position just maps it too position instead of rotation/scale
