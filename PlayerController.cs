@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
 
+    public Animator animation;
 
     // Start is called before the first frame update
     void Start()
@@ -44,5 +45,13 @@ public class PlayerController : MonoBehaviour
                     // V-Sync helps stablize that. However, it isn't always on by default.
                         // Time.deltaTime represents the amount of time in seconds it took to complete the last frame.
         transform.position += moveInput * moveSpeed * Time.deltaTime;
+
+        // Vector3.zero = (0f,0f,0f)
+        if(moveInput != Vector3.zero) {
+            animation.SetBool("isMoving", true);
+        }
+        else {
+            animation.SetBool("isMoving", false);
+        }
     }
 }

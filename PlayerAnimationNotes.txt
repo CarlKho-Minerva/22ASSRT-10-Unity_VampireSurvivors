@@ -1,0 +1,21 @@
+Open animation window
+    Dock
+Toggle Player
+Folders upon Folders
+
+"Animation" really just toggles between different states ("clips")
+    idle = do nothing
+    move = 0.5 -> -0.5 -> 0.5 z-rotation @ a 15-frame interval
+
+yo- what
+
+Animator window shows flowchart interface
+    Manually set parameters "isMoving" then manually link
+        Clicking on arrow shows a new interface with advanced timeline
+    Can wizard of Oz prototype during play
+
+Connecting animation --> Player
+    Inspector
+    Add public Animator animation FIELD
+    Click header in "Inspector" or "Player" from "Hierarchy"
+    
